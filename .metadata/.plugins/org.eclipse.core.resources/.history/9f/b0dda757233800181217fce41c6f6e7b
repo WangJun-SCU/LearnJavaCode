@@ -1,0 +1,64 @@
+package com.wangjun.arithmetic;
+/** 
+ * @author wangjun 
+ * @email  scuwangjun@hotmail.com
+ * @time   2018年4月4日 下午11:43:32 
+ */
+public class LeetCode2_ {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+class ListNode {
+     int val;
+     ListNode next;
+     ListNode(int x) { val = x; }
+ }
+
+class Solution2 {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode result = null;
+        
+        StringBuffer sb1 = new StringBuffer(l1.val);
+        ListNode ln1 = l1.next;
+        while(null != ln1.next) {
+        		ln1 = ln1.next;
+        		sb1.append(ln1.val);
+        }
+        change(sb1);
+        
+        StringBuffer sb2 = new StringBuffer(l2.val);
+        ListNode ln2 = l2.next;
+        while(null != ln2.next) {
+        		ln2 = ln2.next;
+        		sb2.append(ln2.val);
+        }
+        change(sb2);
+        
+        int i1 = Integer.parseInt(sb1.toString());
+        int i2 = Integer.parseInt(sb2.toString());
+        int i3 = i1 + i2;
+        
+        String str = i3 + "";
+        ListNode temListNode = null;
+        for(int i = 0; i < str.length(); i++) {
+        		ListNode tem = new ListNode(Integer.parseInt("" + str.charAt(i)));
+        		tem.next = tem;
+        		temListNode = tem;
+        }
+        
+        return result;
+    }
+    
+    //首位互换
+    public void change(StringBuffer sb) {
+    		for(int i = 0; i < sb.length() / 2; i++) {
+    			char tem = sb.charAt(i);
+    			sb.insert(i, sb.charAt(sb.length() - 1 - i));
+    			sb.insert(sb.length() - i - 1, tem);
+    		}
+    }
+}

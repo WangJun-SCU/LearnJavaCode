@@ -1,0 +1,14 @@
+package com.wangjun.designPattern.adapter;
+/**
+ * 适配器模式测试类
+ * 
+ * @author wangjun
+ *
+ */
+public class Test {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

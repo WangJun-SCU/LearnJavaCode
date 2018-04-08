@@ -1,0 +1,45 @@
+package com.wangjun.othersOfJava;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+/** 
+ * hashMap的增删查改
+ * 无序
+ * key相当于set，不可重复
+ * value相当于list，可重复
+ * @author wangjun 
+ * @email  scuwangjun@hotmail.com
+ * @time   2018年4月6日 下午2:30:31 
+ */
+public class HashMapOperation {
+
+	public static void main(String[] args) {
+		//初始化
+		HashMap<String,String> map = new HashMap<>();
+		//增
+		map.put("key1", "value1");
+		map.put("key2", "value2");
+		map.put("key3", "value3");
+		//删
+		map.remove("key2");
+		//查
+		System.out.println("key1对应的valve为：" + map.get("key1"));
+		//改
+		map.replace("key3", "value33");
+		System.out.println("最终的map是：" + map.toString());
+		//遍历1
+		Iterator<String> it = map.keySet().iterator();
+		while(it.hasNext()) {
+			String key = it.next();
+			String value = map.get(key);
+			System.out.println("key:" + key + ",value:" + value);
+		}
+		//遍历2
+		Map<String, String>.Entry<String, String> entry = map.entrySet();
+		//遍历3
+		//遍历4
+	}
+
+}

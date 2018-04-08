@@ -1,0 +1,22 @@
+package com.wangjun.arithmetic;
+/** 
+ * @author wangjun 
+ * @email  scuwangjun@hotmail.com
+ * @time   2018年4月4日 下午11:14:43 
+ */
+public class Factorial {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	/*
+	 * 计算X!
+	 * 使用递归
+	 */
+	public static int factorial(int n) {
+		
+	}
+
+}

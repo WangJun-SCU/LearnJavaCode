@@ -1,0 +1,36 @@
+package com.wangjun.arithmetic;
+/** 
+ * 实现数组转链表
+ * 
+ * @author wangjun 
+ * @email  scuwangjun@hotmail.com
+ * @time   2018年4月6日 上午11:32:39 
+ */
+public class ArrayToChain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public ChainType toChain(int[] arr) {
+		ChainType head;
+		for(int i = 0; i < arr.length; i++) {
+			
+		}
+		return head;
+	}
+
+}
+/*
+ * 链表结构体
+ */
+class ChainType {
+	int num;
+	ChainType next;
+	ChainType(int num){
+		this.num = num;
+	}
+}
+
+

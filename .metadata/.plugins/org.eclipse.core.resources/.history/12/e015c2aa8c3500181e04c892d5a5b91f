@@ -1,0 +1,14 @@
+package com.wangjun.designPattern.adapter;
+
+/**
+ * @author wangjun
+ *
+ */
+public class ThreeHoleSocketsClass implements ThreeHoleSockets {
+
+	@Override
+	public int holeCount() {
+		return 3;
+	}
+
+}

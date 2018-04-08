@@ -1,0 +1,14 @@
+package com.wangjun.leetcode;
+/** 
+ * @author wangjun 
+ * @email  scuwangjun@hotmail.com
+ * @time   2018年4月8日 下午11:25:40 
+ */
+public class LeetCode3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

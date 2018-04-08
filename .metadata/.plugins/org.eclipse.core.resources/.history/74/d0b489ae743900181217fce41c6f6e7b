@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+//1 10 11 100 101 110 111 110
+public class Test {
+	public static void main(String[] args) {
+		System.out.println(isTwo(16));
+	}
+	
+	// 找出大于n的最小的2的幂
+//	public int findIt(int n) {
+//		
+//	}
+	
+	// 判断是否是2的幂
+	public static boolean isTwo(int n) {
+		while(n > 1) {
+			if(n%2 == 1) {
+				return false;
+			}
+			n /= 2;
+		}
+		return true;
+	}
+}
+

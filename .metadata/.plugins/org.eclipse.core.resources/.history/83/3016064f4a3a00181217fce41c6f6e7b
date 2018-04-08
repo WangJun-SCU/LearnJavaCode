@@ -1,0 +1,28 @@
+package com.wangjun.othersOfJava;
+
+import java.util.Comparator;
+import java.util.TreeSet;
+
+/** 
+ * TreeSet的增删遍历
+ * @author wangjun 
+ * @email  scuwangjun@hotmail.com
+ * @time   2018年4月7日 下午4:36:02 
+ */
+public class TreeSetOperation {
+
+	public static void main(String[] args) {
+		TreeSet<String> set = new TreeSet<String>(new Comparator<String>() {
+			public int compare(String o1, String o2) {
+				return 0;
+			};
+		});
+		//增
+		set.add("key1");
+		set.add("key2");
+		set.add("key3");
+		//删
+		set.remove("key1");
+	}
+
+}

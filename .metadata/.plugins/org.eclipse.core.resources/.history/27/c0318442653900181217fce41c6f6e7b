@@ -1,0 +1,33 @@
+package com.wangjun.othersOfJava;
+
+import java.util.HashMap;
+
+/** 
+ * hashMap的增删查改
+ * @author wangjun 
+ * @email  scuwangjun@hotmail.com
+ * @time   2018年4月6日 下午2:30:31 
+ */
+public class HashMapOperation {
+
+	public static void main(String[] args) {
+		//初始化
+		HashMap<String,String> map = new HashMap<>();
+		String str = new String("str1");
+		//增
+		map.put(str, "value1");
+		map.put("key2", "value2");
+		map.put("key3", "value3");
+		map.put(str, "value2");
+		System.out.println(str.hashCode());
+		System.out.println(str.hashCode());
+		//删
+		map.remove("key2");
+		//查
+		System.out.println("key1对应的valve为：" + map.get(str));
+		//改
+		map.replace("key3", "value33");
+		System.out.println("最终的map是：" + map.toString());
+	}
+
+}

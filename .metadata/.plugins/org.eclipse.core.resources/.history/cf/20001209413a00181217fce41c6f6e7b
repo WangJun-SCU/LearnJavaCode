@@ -1,0 +1,27 @@
+package com.wangjun.othersOfJava;
+
+import java.util.LinkedList;
+import java.util.List;
+
+/** 
+ * LinkedList的增删查改和遍历
+ * @author wangjun 
+ * @email  scuwangjun@hotmail.com
+ * @time   2018年4月7日 下午4:50:44 
+ */
+public class LinkedListOperation {
+
+	public static void main(String[] args) {
+		List<String> list = new LinkedList<String>();
+		//增
+		list.add("str1");
+		list.add("str2");
+		list.add("str3");
+		//删
+		//查
+		//改
+		//遍历1
+		//遍历2
+	}
+
+}

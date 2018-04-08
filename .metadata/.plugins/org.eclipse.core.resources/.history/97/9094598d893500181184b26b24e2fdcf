@@ -1,0 +1,9 @@
+package com.wangjun.designPattern.adapter;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
