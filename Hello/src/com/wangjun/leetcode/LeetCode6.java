@@ -14,7 +14,7 @@ public class LeetCode6 {
 	public static void main(String[] args) {
 		
 		String[] words =  {"i", "love", "leetcode", "i", "love", "coding"};
-		List<String> list = new Leetcode1().topKFrequent(words, 2);
+		List<String> list = new LeetCode6().topKFrequent(words, 2);
 		System.out.println(list.toString());
 		
 	}

@@ -1,7 +1,8 @@
 //1 10 11 100 101 110 111 110
 public class Test {
 	public static void main(String[] args) {
-		System.out.println(findIt(1000000000));
+		int[] arr = new int[10];
+		System.out.println(arr[6]);
 	}
 	
 	// 找出大于n的最小的2的幂
