@@ -21,6 +21,7 @@ public class LeetCode1 {
 }
 
 /*
+   解法1,  用时：41ms
    给定一个整数数列，找出其中和为特定值的那两个数。
    你可以假设每个输入都只会有一种答案，同样的元素不能被重用。
  */
@@ -36,5 +37,18 @@ class Solution {
         		}
         }
         return result;
+    }
+	
+	//解法2，使用HashMap  用时：7ms
+	public int[] twoSum2(int[] nums, int target) {
+		HashMap<Integer,Integer> map = new HashMap<>();
+		for(int i = 0; i < nums.length; i++){
+			if(map.keySet().contains(target - nums[i])){
+				return new int[]{map.get(target - nums[i]),i};
+			}else{
+				map.put(nums[i], i);
+			}
+		}
+		return null;
     }
 }
