@@ -1,0 +1,14 @@
+package com.wangjun.datastructure;
+
+public class Tree {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+class TreeNode {
+	String value;
+	TreeNode left;
+	TreeNode right;
+}

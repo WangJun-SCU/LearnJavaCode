@@ -1,0 +1,20 @@
+package com.wangjun.datastructure;
+
+public class Tree {
+
+	public static void main(String[] args) {
+		int n = 12;
+		StringBuilder sb = new StringBuilder("22");
+		System.out.println(sb.length());
+		System.out.println(test(n));
+	}
+	//n的阶乘
+	public static int test(int n){
+		if(n == 1){
+			return 1;
+		}else{
+			return test(n-1) * n;
+		}
+	}
+}
+

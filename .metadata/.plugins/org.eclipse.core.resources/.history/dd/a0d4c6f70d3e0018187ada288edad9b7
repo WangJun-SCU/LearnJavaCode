@@ -1,0 +1,20 @@
+package com.wangjun.datastructure;
+
+public class Tree {
+
+	public static void main(String[] args) {
+		TreeNode root = new TreeNode("root");
+		TreeNode node1 = new TreeNode("ndoe1");
+		TreeNode node2 = new TreeNode("ndoe2");
+		TreeNode node3 = new TreeNode("ndoe3");
+	}
+}
+
+class TreeNode {
+	String value;
+	TreeNode left;
+	TreeNode right;
+	public TreeNode(String value) {
+		this.value = value;
+	}
+}

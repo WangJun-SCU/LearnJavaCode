@@ -1,0 +1,28 @@
+package com.wangjun.datastructure;
+
+public class Tree {
+
+	public static void main(String[] args) {
+		int n = 12;
+		StringBuilder sb = new StringBuilder("22");
+		System.out.println(sb.length());
+		System.out.println(test2(n));
+	}
+	//n的阶乘
+	public static int test(int n){
+		if(n == 1){
+			return 1;
+		}else{
+			return test(n-1) * n;
+		}
+	}
+	//兔子产子
+	public int test2(int n){
+		if(n == 1 || n == 2){
+			return 1;
+		}else{
+			return test2(n - 1) + test2(n - 2);
+		}
+	}
+}
+
