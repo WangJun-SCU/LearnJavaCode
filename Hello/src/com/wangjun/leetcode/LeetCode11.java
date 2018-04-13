@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+题目：相同的树
 给定两个二叉树，写一个函数来检查它们是否相同。
 如果两棵树在结构上相同并且节点具有相同的值，则认为它们是相同的。
  */
