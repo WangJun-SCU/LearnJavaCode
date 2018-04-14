@@ -1,0 +1,22 @@
+package com.wangjun.othersOfJava;
+/*
+ * 实现线程的三种方式：
+ * 1. 继承Thread
+ * 2. 实现Runnable接口
+ * 3. 实现Callable接口
+ */
+public class ThreeWayOfThread {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
+//继承Thread
+class Thread1 extends Thread {
+	@Override
+	public void run() {
+		
+	}
+}
+

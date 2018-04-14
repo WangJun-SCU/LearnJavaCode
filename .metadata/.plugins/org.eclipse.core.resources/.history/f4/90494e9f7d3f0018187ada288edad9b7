@@ -1,0 +1,9 @@
+package com.wangjun.othersOfJava;
+
+public class ThreeWayOfThread {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

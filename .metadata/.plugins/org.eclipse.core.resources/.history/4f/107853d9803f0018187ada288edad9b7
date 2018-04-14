@@ -1,0 +1,78 @@
+package com.wangjun.othersOfJava;
+
+import java.util.concurrent.Callable;
+
+/*
+ * 实现线程的三种方式：
+ * 1. 继承Thread
+ * 2. 实现Runnable接口
+ * 3. 实现Callable接口
+ */
+public class ThreeWayOfThread {
+
+	public static void main(String[] args) {
+		//第一种实现方式
+		Thread1 t11 = new Thread1();
+		Thread1 t12 = new Thread1();
+		Thread1 t13 = new Thread1();
+		
+//		t11.start();
+//		t12.start();
+//		t13.start();
+		//第二种实现方式
+		Thread2 t21 = new Thread2();
+		Thread2 t22 = new Thread2();
+		Thread2 t23 = new Thread2();
+		
+		Thread t211 = new Thread(t21);
+		Thread t212 = new Thread(t21);
+		Thread t213 = new Thread(t21);
+		
+		t211.start();
+		t212.start();
+		t213.start();
+		//第三种实现
+		
+		
+	}
+
+}
+//继承Thread
+class Thread1 extends Thread {
+	
+	private int n = 5;
+	
+	@Override
+	public void run() {
+		for(int i = 0; i < n; i++) {
+			System.out.println("name:" + this.getName() + ", i:" + i);
+		}
+	}
+}
+//实现Runnable接口
+class Thread2 implements Runnable {
+	
+	private int n = 5; 
+	
+	@Override
+	public void run() {
+		for(int i = 0; i < n; i++) {
+			System.out.println("name:" + Thread.currentThread().getName() + ", i:" + i);
+		}
+	}
+}
+//实现Callable接口
+class Thread3 implements Callable<String> {
+	
+	private int n = 5;
+
+	@Override
+	public String call() throws Exception {
+		for(int i = 0; i < n; i++) {
+			System.out.println("name:" + Thread.currentThread().getName() + ", i:" + i);
+		}
+		return String.valueOf(n);
+	}
+	
+}
+
