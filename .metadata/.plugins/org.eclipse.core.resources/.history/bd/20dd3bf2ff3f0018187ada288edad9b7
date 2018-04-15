@@ -1,7 +1,11 @@
+import java.util.Arrays;
+
 //1 10 11 100 101 110 111 110
 public class Test {
 	public static void main(String[] args) {
-		System.out.println((int)' ');
+		int[] arr = {2,3,4,5,1,2,3};
+		sortBuddle(arr);
+		System.out.println(Arrays.toString(arr));
 	}
 	
 	public static void sortBuddle(int[] arr){

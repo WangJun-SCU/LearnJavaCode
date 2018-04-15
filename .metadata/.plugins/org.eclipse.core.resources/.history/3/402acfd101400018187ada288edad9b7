@@ -1,0 +1,21 @@
+package com.wangjun.leetcode;
+
+public class LeetCode12 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public int strStr(String haystack, String needle) {
+        char[] arr1 = haystack.toCharArray();
+        char[] arr2 = needle.toCharArray();
+        int len1 = arr1.length;
+        int len2 = arr2.length;
+        
+        for(int i = 0; i < len1; i++) {
+        		
+        }
+    }
+
+}
