@@ -1,26 +1,32 @@
+import java.util.HashMap;
+import java.util.Map;
+
 //1 10 11 100 101 110 111 110
 public class Test {
 	public static void main(String[] args) {
-		System.out.println((int)' ');
+		Map<Person,String> map = new HashMap<>();
+		Person p1 = new Person(1);
+		map.put(p1, "p1");
+		System.out.println(map.get(new Person(1)));
+		System.out.println(5);
 	}
 	
-	public static void sortBuddle(int[] arr){
+}
+class Person {
+	int id;
+	public Person(int id) {
+		this.id = id;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj)
+			return true;
+		if(null == obj || getClass() != obj.getClass())
+			return false;
 		
-		for(int i = 0; i < arr.length; i++){
-			boolean tag = false;
-			for(int j = 0; j < arr.length - i - 1; j++){
-				if(arr[j] > arr[j+1]){
-					arr[j] = arr[j] ^ arr[j+1];
-					arr[j+1] = arr[j] ^ arr[j+1];
-					arr[j] = arr[j] ^ arr[j+1];
-					tag = true;
-				}
-			}
-			if(!tag)
-				break;
-		}
+		Person p = (Person)obj;
+		return this.id == p.id;
 	}
 }
-
 	
 

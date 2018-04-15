@@ -1,0 +1,38 @@
+package com.wangjun.leetcode;
+
+import java.util.List;
+
+/*
+给定一个二叉树，检查它是否是它自己的镜像（即，围绕它的中心对称）。
+例如，这个二叉树 [1,2,2,3,4,4,3] 是对称的。
+ */
+public class LeetCode13 {
+
+	public static void main(String[] args) {
+
+	}
+
+	public boolean isSymmetric(TreeNode root) {
+
+		return true;
+	}
+
+	public void scanDLR(List<Integer> list, TreeNode1 treeNode) {
+		if(null == treeNode) {
+			list.add(null);
+			return;
+		}
+		list.add(treeNode.val);
+	}
+
+}
+
+class TreeNode1 {
+	int val;
+	TreeNode left;
+	TreeNode right;
+
+	TreeNode1(int x) {
+		val = x;
+	}
+}

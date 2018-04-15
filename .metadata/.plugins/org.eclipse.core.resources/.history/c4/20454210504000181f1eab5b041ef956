@@ -1,0 +1,16 @@
+package com.wangjun.arithmetic;
+
+/*
+ * 插入排序
+ */
+public class SortInsert {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	public void sortInsert(int[] arr) {
+		
+	}
+
+}

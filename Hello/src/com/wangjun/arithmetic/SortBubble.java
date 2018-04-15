@@ -24,25 +24,21 @@ public class SortBubble {
 	 * 第一个for循环次数，可以理解每个i的值是每次遍历最大值放的位置 第二个for进行冒泡交换
 	 */
 	public static void doBubble(int[] arr) {
-		boolean isChange = false;
-		int count = 0;
-		for (int i = arr.length - 1; i > 0; i--) {
-			isChange = false;
-			for (int j = 0; j < i; j++) {
-				if (arr[j] > arr[j + 1]) {
-					int tem = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = tem;
-					count++;
-					// isChange = true;
+		int len = arr.length;
+		for(int i = 0; i < len; i++) {
+			boolean isChange = false;
+			for(int j = 0; j < len - i - 1; j++) {
+				if(arr[j] > arr[j+1]) {
+					arr[j] = arr[j] + arr[j+1];
+					arr[j+1] = arr[j] - arr[j+1];
+					arr[j] = arr[j] - arr[j+1];
+					isChange = true;
 				}
 			}
-			System.out.println(Arrays.toString(arr));
-			if (!isChange) {
-				return;
+			if(!isChange) {
+				break;
 			}
 		}
-		System.out.println(count);
 	}
 
 	/*

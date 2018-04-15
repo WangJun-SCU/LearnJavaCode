@@ -1,0 +1,11 @@
+package com.wangjun.arithmetic;
+/*
+ * 选择排序
+ */
+public class SortSelect {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

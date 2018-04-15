@@ -1,0 +1,23 @@
+package com.wangjun.arithmetic;
+/*
+ * 选择排序
+ */
+public class SortSelect {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	public void sortSelect(int[] arr) {
+		int len = arr.length;
+		for(int i = 0; i < len - 1; i++) {
+			int min = i;
+			for(int j = i; j < len; j++) {
+				if(arr[j] < min) {
+					min = arr[j];
+				}
+			}
+		}
+	}
+
+}
