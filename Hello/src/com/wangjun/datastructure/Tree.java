@@ -1,6 +1,7 @@
 package com.wangjun.datastructure;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 public class Tree {
 
@@ -14,12 +15,20 @@ public class Tree {
 		root.right = node2;
 		node1.left = node3;
 		System.out.println("树的深度是：" + tree.deepth(root));
+		
 		System.out.println("先序遍历：");
 		tree.showDLR(root);
+		System.out.println("\n先序遍历（非递归）：");
+		tree.showDLRNotRecursion(root);
+		
 		System.out.println("\n中序遍历：");
 		tree.showLDR(root);
+		System.out.println("\n中序遍历（非递归）：");
+		tree.showLDRNotRecursion(root);
+		
 		System.out.println("\n后序遍历：");
 		tree.showLRD(root);
+		
 		System.out.println("\n按层遍历");
 		tree.showByLevel(root);
 	}
@@ -125,6 +134,39 @@ public class Tree {
 			}
 		}
 	}
+	//遍历5 前序遍历的非递归实现
+	public void showDLRNotRecursion(TreeNode treeNode) {
+		Stack<TreeNode> stack = new Stack<>();
+		TreeNode node = treeNode;
+		while(null != node || stack.size() >0) {
+			while(null != node) {
+				showData(node);
+				stack.push(node);
+				node = node.left;
+			}
+			if(stack.size() > 0) {
+				node = stack.pop();
+				node = node.right;
+			}
+		}
+	}
+	//遍历6  中序遍历的非递归实现
+	public void showLDRNotRecursion(TreeNode treeNode) {
+		Stack<TreeNode> stack = new Stack<>();
+		TreeNode node = treeNode;
+		while(null != node || stack.size() > 0) {
+			while(null != node) {
+				stack.push(node);
+				node = node.left;
+			}
+			if(stack.size() > 0) {
+				node = stack.pop();
+				showData(node);
+				node = node.right;
+			}
+		}
+	}
+	//遍历7 后续遍历的非递归实现 ......
 }
 
 class TreeNode {
