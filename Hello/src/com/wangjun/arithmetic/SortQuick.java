@@ -29,35 +29,32 @@ public class SortQuick {
 	}
 	
 	public void sortHelper(int[] arr, int start, int end) {
-		int lstart = start;
-		int rend = end;
-		
-		int middle = arr[(start + end)/2]; //分解值
-		
-		while(start < end) {
-			while(arr[start] < middle) {
-				start++;
+		int left = start;
+		int right = end;
+		int middle = arr[(left+right)/2];
+		while(left < right) {
+			while(middle > arr[left]) {
+				left++;
 			}
-			while(arr[end] > middle) {
-				end--;
+			while(middle < arr[right]) {
+				right--;
 			}
-			if(start < end) {
-				int tem = arr[start];
-				arr[start] = arr[end];
-				arr[end] = tem;
-				start++;
-				end--;
+			if(left < right) {
+				int tem = arr[left];
+				arr[left] = arr[right];
+				arr[right] = tem;
+				left++;
+				right--;
 			}
 		}
-		if(start == end) {
-			start++;
+		if(left == right) {
+			left++;
 		}
-		
-		if(lstart < end) {
-			sortHelper(arr, lstart, start - 1);
+		if(start < right) {
+			sortQuick(arr,start,right);
 		}
-		if(rend > start) {
-			sortHelper(arr, end + 1, rend);
+		if(end > left) {
+			sortQuick(arr,left,end);
 		}
 		
 	}
