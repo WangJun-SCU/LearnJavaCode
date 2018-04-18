@@ -1,9 +1,0 @@
-package com.wangjun.othersOfJava;
-
-public class 线程池 {
-
-	public static void main(String[] args) {
-		
-	}
-
-}

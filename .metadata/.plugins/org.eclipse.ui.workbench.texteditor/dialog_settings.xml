@@ -8,6 +8,11 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="addEntry"/>
+			<item value="&lt;&lt; 1"/>
+			<item value="* 2"/>
+			<item value="*2"/>
+			<item value="TreeNode1"/>
 			<item value="CocurrentHashMap"/>
 			<item value="getEntry"/>
 			<item value="getEntry(Object key)"/>
@@ -18,13 +23,9 @@
 			<item value="modCount"/>
 			<item value="readResolve"/>
 			<item value="Resolve"/>
-			<item value="readResolveMethod"/>
-			<item value="SingletonLazyThreadSafe"/>
-			<item value="wait()"/>
-			<item value="wait（）"/>
-			<item value="wait"/>
 		</list>
 		<list key="replacehistory">
+			<item value="TreeNode"/>
 			<item value="SingletonLazy2"/>
 		</list>
 	</section>
