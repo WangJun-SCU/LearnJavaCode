@@ -51,10 +51,10 @@ public class SortQuick {
 			left++;
 		}
 		if(start < right) {
-			sortQuick(arr,start,right);
+			sortHelper(arr,start,right);
 		}
 		if(end > left) {
-			sortQuick(arr,left,end);
+			sortHelper(arr,left,end);
 		}
 		
 	}
