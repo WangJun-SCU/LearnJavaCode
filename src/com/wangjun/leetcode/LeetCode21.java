@@ -46,6 +46,21 @@ public class LeetCode21 {
         		middle = start + (end - start)/2;
         }
     }
+	//解法2 17ms  46.73%
+	public int firstBadVersion2(int n) {
+		int start = 1;
+		int end = n;
+		int middle;
+		while(start < end) {
+			middle = start + (end - start)/2;
+			if(isBadVersion(middle)) {
+				end = middle;
+			}else {
+				start = middle + 1;
+			}
+		}
+		return start;
+	}
 	
 	
 	public boolean isBadVersion(int version) {
