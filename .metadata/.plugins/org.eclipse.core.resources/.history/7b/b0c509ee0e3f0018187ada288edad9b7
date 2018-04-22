@@ -1,9 +1,0 @@
-package com.wangjun.arithmetic;
-
-public class TestSortBubble {
-
-	public static void main(String[] args) {
-		
-	}
-
-}
