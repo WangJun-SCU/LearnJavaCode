@@ -20,7 +20,7 @@ solution.reset();
 // 随机返回数组[1,2,3]打乱后的结果。
 solution.shuffle();
  */
-public class LeetCode25 {
+public class LeetCode25_ {
 
 	public static void main(String[] args) {
 		 int[] nums = {1,2,3,4,5,6};
