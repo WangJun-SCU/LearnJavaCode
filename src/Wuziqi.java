@@ -11,7 +11,6 @@ public class Wuziqi {
 	String[][] qipan;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Wuziqi wzq = new Wuziqi();
 		wzq.init(wzq.N); //初始化棋盘
 		

@@ -12,7 +12,6 @@ import java.util.Arrays;
 public class SortBubble {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] arr = { 3, 1, 2, 4, 5, 6, 3, 1, 2, 4, 3};
 		doBubble(arr);
 		System.out.println(Arrays.toString(arr));

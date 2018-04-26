@@ -8,7 +8,6 @@ import java.io.Serializable;
 public class SerializeDemo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Employee em = new Employee();
 		em.name = "wangjun";
 		em.age = 24;
@@ -20,7 +19,6 @@ public class SerializeDemo {
 			oo.close();
 			fo.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -35,7 +33,6 @@ public class SerializeDemo {
 			System.out.println(e2.ssh);
 			e2.test();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

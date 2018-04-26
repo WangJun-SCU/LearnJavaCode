@@ -16,7 +16,6 @@ package com.wangjun.leetcode;
 public class LeetCode12 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		LeetCode12 lc = new LeetCode12();
 		System.out.println(lc.strStr("hello", "ll"));
 		

@@ -87,7 +87,6 @@ class SingletonLazy3 {
 				}
 			}
 		} catch (InterruptedException e) {
-			// TODO: handle exception
 		}
 		return singletonLazy;
 	}
@@ -114,7 +113,6 @@ class SingletonLazy4 {
 				}
 			}
 		} catch (InterruptedException e) {
-			// TODO: handle exception
 		}
 		return singletonLazy;
 	}
@@ -143,7 +141,6 @@ class SingletonLazy5 {
 				}
 			}
 		} catch (InterruptedException e) {
-			// TODO: handle exception
 		}
 		return singletonLazy;
 	}

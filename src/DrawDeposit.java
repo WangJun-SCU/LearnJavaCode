@@ -23,7 +23,6 @@ class DrawThread extends Thread {
 				acct.Draw(1000.0);
 			}
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -40,7 +39,6 @@ class DepositThread extends Thread {
 				acct.deposit(1000.0);
 			}
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -68,7 +66,6 @@ class Account {
 			}
 			lock.unlock();
 		} finally {
-			// TODO: handle finally clause
 		}
 	}
 	//存钱
@@ -84,7 +81,6 @@ class Account {
 				System.out.println("存钱：余额：" + balance);
 			}
 		} finally {
-			// TODO: handle finally clause
 			lock.unlock();
 		}
 		

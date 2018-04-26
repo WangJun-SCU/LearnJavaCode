@@ -57,7 +57,6 @@ public class 典型线程问题 {
 						System.out.println("统计线程" + i);
 					}
 				} catch (Exception e) {
-					// TODO: handle exception
 				}
 			}
 		});
