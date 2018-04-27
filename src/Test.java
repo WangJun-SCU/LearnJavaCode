@@ -2,8 +2,8 @@
 public class Test {
 	public static final int a = 0;
 	public static void main(String[] args) {
-		//系统默认的类加载器是应用加载器AppClassLoader
-		System.out.println(ClassLoader.getSystemClassLoader().getClass().getName());
+		boolean[] arr = new boolean[10];
+		System.out.println(arr[4]);
 	}
 }
 	

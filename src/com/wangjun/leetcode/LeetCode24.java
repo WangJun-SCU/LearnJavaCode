@@ -26,6 +26,7 @@ public class LeetCode24 {
 		
 	}
 	//解法2 
+	//TODO 使用求最大子列的Kadane算法解决
 	public int maxProfit2(int[] prices) {
 		
 		return 0;
