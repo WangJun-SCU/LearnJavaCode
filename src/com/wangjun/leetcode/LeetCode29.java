@@ -14,7 +14,6 @@ public class LeetCode29 {
 		Solution s = new Solution();
 		System.out.println(s.hammingWeight2(10));
 	}
-	//TODO  实现求1的个数
 	static class Solution {
 	    // you need to treat n as an unsigned value
 		//解法2 1ms 100%
