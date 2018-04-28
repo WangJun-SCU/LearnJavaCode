@@ -12,15 +12,30 @@ public class LeetCode29 {
 
 	public static void main(String[] args) {
 		Solution s = new Solution();
-		s.hammingWeight(-2);
+		System.out.println(s.hammingWeight2(10));
 	}
 	//TODO  实现求1的个数
 	static class Solution {
 	    // you need to treat n as an unsigned value
+		//解法2 1ms 100%
+		public int hammingWeight2(int n) {
+			int result = 0;
+			while(n != 0) {
+				result = result + (n & 1);
+				n = n >>> 1;
+			}
+			return result;
+		}
+		// 解法1  2ms  4.62%
 	    public int hammingWeight(int n) {
+	    		int result = 0;
 	    		String s = Integer.toBinaryString(n);
-	    		System.out.println(s);
-	    		return 0;
+	    		for(int i = 0; i < s.length(); i++) {
+	    			if(s.charAt(i) == '1') {
+	    				result++;
+	    			}
+	    		}
+	    		return result;
 	    }
 	}
 
