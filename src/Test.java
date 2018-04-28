@@ -1,7 +1,11 @@
+import java.util.ArrayList;
+import java.util.List;
+
 //1 10 11 100 101 110 111 110
 public class Test {
 	public static void main(String[] args) {
-		printBinaryInt(-1);
+		List<String> list = new ArrayList<>();
+		System.out.println(list);
 	}
 
 	static void printBinaryInt(int i) {
