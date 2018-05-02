@@ -15,6 +15,8 @@ import java.util.List;
  *4. 类的Filed
  *5. 类的方法
  *
+ *6. 代理的意义和使用
+ *
  *通过反射还可以越过泛型检查。泛型用在编译期，编译过后泛型擦除（消失掉）。
  */
 public class ReflectClass {
