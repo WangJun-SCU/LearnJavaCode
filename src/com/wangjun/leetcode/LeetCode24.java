@@ -25,14 +25,40 @@ public class LeetCode24 {
 	public static void main(String[] args) {
 		
 	}
-	//解法2 
-	//TODO 使用求最大子列的Kadane算法解决
+	//解法2 3ms  55.08%
+	//REVIEW 将其转换成：求最大子列的Kadane算法解决
 	public int maxProfit2(int[] prices) {
-		
-		return 0;
+		int max = 0;
+		int maxCur = 0;
+		for(int i = 1; i < prices.length; i++) {
+			maxCur = Math.max(0, maxCur += (prices[i] - prices[i -1]));
+			max = Math.max(maxCur, max);
+		}
+		return max;
+	}
+	//解法2 直观一点，先转成最长子序列问题  4ms  37.46%
+	public int maxProfit22(int[] prices) {
+		if(prices.length < 2) {
+			return 0;
+		}
+		int[] buff = new int[prices.length - 1];
+		for(int i = 1; i < prices.length; i++) {
+			buff[i - 1] = prices[i] - prices[i - 1];
+		}
+		return kadane(buff);
+	}
+	//使用kanane算法求最长子序列
+	public int kadane(int[] arr) {
+		int max = arr[0];
+		int maxCur = arr[0];
+		for(int i = 1; i < arr.length; i++) {
+			maxCur = Math.max(maxCur, maxCur + arr[i]);
+			max = Math.max(max, maxCur);
+		}
+		return max > 0? max : 0;
 	}
 	
-	//解法1  冒泡思想 122ms  6.95%
+	//解法1  冒泡思想，依次遍历 122ms  6.95%
 	public int maxProfit(int[] prices) {
         int len = prices.length;
         int max = 0;
