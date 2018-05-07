@@ -28,7 +28,7 @@ public class LeetCode38_ {
 		
 	}
 	
-	//TODO  岛屿的个数
+	//TODO  岛屿的个数  使用图算法，待学习图结构
 	class Solution {
 	    public int numIslands(char[][] grid) {
 	        return 0;
