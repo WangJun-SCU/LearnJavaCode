@@ -33,6 +33,7 @@ public class LeetCode40_ {
 	static class Solution {
 		List<List<Integer>> list = new ArrayList<>();
 		// 解法1，使用递归  4ms  98.73%
+		// REVIEW 经典算法：数组全排列
 	    public List<List<Integer>> permute(int[] nums) {
 	    	permexec(nums, 0, nums.length);
 	        return list;
