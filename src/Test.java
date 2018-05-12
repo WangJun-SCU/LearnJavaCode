@@ -2,9 +2,12 @@ import java.util.Arrays;
 
 public class Test {
 	public static void main(String[] args) {
-		int[] arr = {1,2,3};
-		Test t = new Test();
-		t.perm(arr, 0, arr.length);
+		int n1 = 1;
+		int n2 = 2;
+		int[] arr = {n1, n2};
+		n1 = 3;
+		n2 = 4;
+		System.out.println(Arrays.toString(arr));
 	}
 	
 	public void perm(int[] nums, int start, int len) {

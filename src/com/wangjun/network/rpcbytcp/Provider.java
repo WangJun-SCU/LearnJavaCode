@@ -25,7 +25,7 @@ public class Provider {
 			
 			//执行调用
 			Class serviceinterfaceclass = Class.forName(interfaceName);
-			//TODO 取得服务实现的对象
+			//取得服务实现的对象
 			Object service = new SayHelloServiceImpl();
 			Method method = serviceinterfaceclass.getMethod(methodName, paramsTypes);
 			Object result = method.invoke(service, args);

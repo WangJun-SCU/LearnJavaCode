@@ -30,7 +30,7 @@ public class LeetCode41_ {
 	}
 	
 	class Solution {
-		//FIXME 数组全排列
+		//FIXME 子集
 	    public List<List<Integer>> subsets(int[] nums) {
 	        int len = nums.length;
 	        for(int i = 0; i <= len; i++) {
