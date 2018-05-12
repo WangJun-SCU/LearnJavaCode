@@ -31,7 +31,7 @@ public class LeetCode46_ {
 	   
 	static class Solution {
 		
-		//TODO  搜索旋转排序数组
+		//TODO  搜索旋转排序数组,失败
 		public int search(int[] nums, int target) {
 			if(null == nums || nums.length == 0) {
 				return -1;
