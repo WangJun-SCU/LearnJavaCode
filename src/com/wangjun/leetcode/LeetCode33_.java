@@ -1,5 +1,8 @@
 package com.wangjun.leetcode;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /*
 给定一个字符串，找出不含有重复字符的最长子串的长度。
 
@@ -14,14 +17,38 @@ package com.wangjun.leetcode;
 public class LeetCode33_ {
 
 	public static void main(String[] args) {
-		
+		String s = "c";
+		Solution s1 = new Solution();
+		System.out.println(s1.lengthOfLongestSubstring(s));
 	}
 	
-	//FIXME 无重复字符串的子串
-	class Solution {
+	//REVIEW 无重复字符串的子串
+	static class Solution {
+		//解法1  63ms  37.88%
+		//使用一个list存储每个字符，如果已经存储过，则删掉这个字符之前的所有字符
 	    public int lengthOfLongestSubstring(String s) {
 	    	
-	        return 0;
+	    	if(null == s || s.length() ==0) {
+	    		return 0;
+	    	}
+	    	
+	    	int maxLen = 0;
+	    	LinkedList<Character> list = new LinkedList<>();
+	    	
+	    	int len = s.length();
+	    	for(int i = 0; i < len; i++) {
+	    		char c = s.charAt(i);
+	    		if(list.contains(c)) {
+	    			maxLen = Math.max(maxLen, list.size());
+	    			int index = list.indexOf(c);
+	    			for(int j = 0; j <= index; j++) {
+	    				list.pop();
+	    			}
+	    		}
+	    		list.add(c);
+	    	}
+	    	
+	        return Math.max(maxLen, list.size());
 	    }
 	}
 
