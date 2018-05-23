@@ -63,7 +63,7 @@ public class LeetCode53 {
 					max = nums[i];
 				}
 			}
-			
+			/*
 			int[] arr = new int[max - min + 1];
 			boolean hasZero = false;  //特殊值0的处理
 			for(int i = 0; i < len; i++) {
@@ -80,6 +80,15 @@ public class LeetCode53 {
 						arr[nums[i] - min] = nums[i];
 					}
 				}
+			}
+			*/
+			//优化，使用Integer数组就不需要特殊处理0了
+			Integer[] arr = new Integer[max - min + 1];
+			for(int i = 0; i < len; i++) {
+				if(arr[nums[i] - min] != null) {
+					return true;
+				}
+				arr[nums[i] - min] = nums[i];
 			}
 			return false;
 		}
