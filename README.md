@@ -1,4 +1,4 @@
-Java练习代码，包括
+Java练习代码，包括 
  - **算法**（package com.wangjun.arithmetic）
  - **数据结构**（package com.wangjun.datastructure）
  - **LeetCode**（package com.wangjun.leetcode）
