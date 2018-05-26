@@ -5,12 +5,13 @@ public class Test {
 	public static void main(String[] args) throws InterruptedException {
 		int[] nums = {2,6,8,5,4,3,8,5,3,6,8,4,6};
 		Test t = new Test();
-		t.sortQuick(nums);
+		t.sortQuick(nums, 0, nums.length - 1);
 		System.out.println(Arrays.toString(nums));
 		
 		int[] nums2 = {1,2,3,4};
 		t.printAllNums(nums2, 0, nums2.length);
 	}
+	
 	
 	//全排列
 	public void printAllNums(int[] nums, int start, int len) {
