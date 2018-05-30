@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class SortQuick {
 
 	public static void main(String[] args) {
-		int[] arr = {2,3,7,5,43,8,9,0,3,1};
+		int[] arr = { 2, 6, 8, 5, 4, 3, 8, 5, 3, 6, 8, 4, 6 };
 		int[] arr1 = {5,7};
 		SortQuick ss = new SortQuick();
 		ss.sortQuick(arr);
