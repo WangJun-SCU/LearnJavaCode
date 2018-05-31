@@ -14,8 +14,9 @@ import java.util.concurrent.TimeUnit;
 public class ThreadPoolTest {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
-		ExecutorService threadPool = Executors.newFixedThreadPool(6);
 		
+		//生产普通的线程池
+		ExecutorService threadPool = Executors.newFixedThreadPool(6);
 		// 第一种执行线程的方式
 		threadPool.submit(new MyThread()); 
 		// 第二种执行线程的方式，有返回值
@@ -28,8 +29,8 @@ public class ThreadPoolTest {
 		// 关闭线程池,不再接受新的任务，会将之前所有提交的任务执行完成，所有任务完成后，所有的线程死亡
 		// 调用shutdownNow可以立马停止所有线程
 		threadPool.shutdown();
-		
-		// 可以延迟执行的线程池
+		System.out.println("-----");
+		// 生产可以延迟执行的线程池
 		ScheduledExecutorService threadPool2 = Executors.newScheduledThreadPool(6);
 		// 延迟1秒执行
 		threadPool2.schedule(new MyThread(), 1, TimeUnit.SECONDS);
@@ -40,6 +41,9 @@ public class ThreadPoolTest {
 		// 是以上一个任务结束时开始计时，period时间过去后，立即执行。
 		// 两个方法以不同的时间点作为参考
 		threadPool2.scheduleWithFixedDelay(new MyThread(), 2, 1, TimeUnit.SECONDS);
+		
+		Thread.sleep(3000);
+		threadPool2.shutdown();
 	}
 
 	static class MyThread extends Thread {
