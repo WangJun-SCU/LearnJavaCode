@@ -29,7 +29,7 @@ public class LeetCode58 {
 				int tail = x % 10;
 				int tem = result;
 				result = result * 10 + tail;
-				if(result/10 != tem) return 0;
+				if(result/10 != tem) return 0;  // 如果溢出就和原数不相等了
 				x = x / 10;
 			}
 			return result;
