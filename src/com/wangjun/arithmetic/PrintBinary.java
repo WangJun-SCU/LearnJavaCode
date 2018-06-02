@@ -3,9 +3,10 @@ package com.wangjun.arithmetic;
 public class PrintBinary {
 
 	public static void main(String[] args) {
-		printBinaryInt(-2);
+		printBinaryInt(-1);
 		System.out.println();
-		System.out.println(Integer.toBinaryString(-2));
+		System.out.println(Integer.toBinaryString(Integer.MAX_VALUE * 10));
+		System.out.println(Integer.MAX_VALUE * 2);
 	}
 	
 	/*

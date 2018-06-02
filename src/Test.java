@@ -13,6 +13,18 @@ public class Test {
 		t.quanPaiLie(nums2, 0, nums2.length);
 	}
 	
+	// 反转链表
+	public ListNode reverseList(ListNode head) {
+		ListNode pre = null;
+		while(null != head) {
+			ListNode next = head.next;
+			head.next = pre;
+			pre = head;
+			head = next;
+		}
+		return pre;
+	}
+	
 	public void sortQuick(int[] nums, int start, int end) {
 		int left = start;
 		int right = end;
@@ -60,10 +72,6 @@ public class Test {
 		nums[j] = tem;
 	}
 	
-	class TreeNode {
-		TreeNode left;
-		TreeNode right;
-	}
 	
 	public void DLR(TreeNode root) {
 		Stack<TreeNode> stack = new Stack<>();

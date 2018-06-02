@@ -18,6 +18,20 @@ public class LeetCode15 {
 		result.printListNode();
 	}
 	
+	// 解法2 递归
+	public ListNode reverseList2(ListNode head) {
+	    /* recursive solution */
+	    return reverseListInt(head, null);
+	}
+
+	private ListNode reverseListInt(ListNode head, ListNode newHead) {
+	    if (head == null)
+	        return newHead;
+	    ListNode next = head.next;
+	    head.next = newHead;
+	    return reverseListInt(next, head);
+	}
+	
 	//解法1  用时：0ms  战胜：100%
 	public ListNode reverseList(ListNode head) {
 		
