@@ -3,9 +3,7 @@ package com.wangjun.arithmetic;
 import java.util.Arrays;
 
 /*
-排序算法：归并排序
-参考：
-https://blog.csdn.net/y999666/article/details/50942604
+排序算法：归并排序的递归实现和非递归实现（迭代）
  */
 public class SortMerge {
 
@@ -27,48 +25,47 @@ public class SortMerge {
 		int len2 = arr2.length;
 		int[] res = new int[len1 + len2];
 		int i = 0, j = 0, k = 0;
-		while(i < len1 || j < len2) {
-			if(i < len1 && j < len2) {
-				res[k++] = arr1[i] < arr2[j]? arr1[i++] : arr2[j++];
-			}else if(i < len1) {
-				res[k++] = arr1[i++];
-			}else {
-				res[k++] = arr2[j++];
-			}
+		while(i < len1 && j < len2) {
+			res[k++] = arr1[i] < arr2[j]? arr1[i++] : arr2[j++];
+		}
+		while(i < len1) {
+			res[k++] = arr1[i++];
+		}
+		while(j < len2) {
+			res[k++] = arr2[j++];
 		}
 		return res;
 	}
+	
 	// 归并排序，非递归实现(迭代)
 	public void sortMergeIteration(int[] nums) {
-		int len = 1;
+		int len = 1;  // 初始排序数组的长度
 		while(len < nums.length) {
 			for(int i = 0; i < nums.length; i += len * 2) {
 				sortMergeIterationHelper(nums, i, len);
 			}
-			len *= 2;
+			len *= 2;  // 每次将排序数组的长度*2
 		}
 	}
 	/**
 	 * 辅助函数
 	 * @param nums  原数组
 	 * @param start 从start位置开始
-	 * @param len  本次合并的两个数组的长度
+	 * @param len  本次合并的数组长度
 	 */
 	public void sortMergeIterationHelper(int[] nums, int start, int len) {
 		int[] tem = new int[len * 2];
 		int i = start;
 		int j = start + len;
 		int k = 0;
-		while(i < start + len || (j < start + len + len && j < nums.length)) {
-			if(i < start + len && (j < start + len + len && j < nums.length)) {
-				tem[k++] = nums[i] < nums[j]? nums[i++] : nums[j++];
-			}else if(i < start + len && i < nums.length) {
-				tem[k++] = nums[i++];
-			}else if(j < start + len + len && j < nums.length){
-				tem[k++] = nums[j++];
-			}else {
-				break;
-			}
+		while(i < start + len && (j < start + len + len && j < nums.length)) {
+			tem[k++] = nums[i] < nums[j]? nums[i++] : nums[j++];
+		}
+		while(i < start + len && i < nums.length) {  // 注意：这里i也可能超出长度
+			tem[k++] = nums[i++];
+		}
+		while(j < start + len + len && j < nums.length) {
+			tem[k++] = nums[j++];
 		}
 		int right = start + len + len;
 		int index = 0;
@@ -76,6 +73,7 @@ public class SortMerge {
 			nums[start++] = tem[index++];
 		}
 	}
+	
 	// 归并排序，递归实现
 	public void sortMergeRecursion(int[] nums) {
 		sortMergeRecursionHelper(nums, 0, nums.length - 1);
@@ -85,43 +83,19 @@ public class SortMerge {
 		int middle = left + (right - left) / 2;
 		sortMergeRecursionHelper(nums, left, middle);
 		sortMergeRecursionHelper(nums, middle + 1, right);
-		mergeArr2(nums, left, middle, right);
+		mergeArr(nums, left, middle, right);
 	}
 	public void mergeArr(int[] nums, int left, int middle, int right) {
-		// 分为两个有序数组[left, middle]和[middle + 1, right]
-		int[] tem1 = new int[middle - left + 1];
-		int[] tem2 = new int[right - middle];
-		// 拷贝两个临时数组
-		for(int i = left; i <= middle; i++) {
-			tem1[i - left] = nums[i];
-		}
-		for(int i = middle + 1; i <= right; i++) {
-			tem2[i - middle - 1] = nums[i];
-		}
-		// 根据这两个数组进行合并排序，并放入nums数组中的left-right位置
-		int i = 0, j = 0, k = left;
-		while(i < tem1.length || j < tem2.length) {
-			if(i < tem1.length && j < tem2.length) {
-				nums[k++] = tem1[i] < tem2[j]? tem1[i++] : tem2[j++];
-			}else if(i < tem1.length) {
-				nums[k++] = tem1[i++];
-			}else {
-				nums[k++] = tem2[j++];
-			}
-		}
-	}
-	// 也可以使用一个辅助数组
-	public void mergeArr2(int[] nums, int left, int middle, int right) {
 		int[] tem = new int[right - left + 1];
 		int i = left, j = middle + 1, k = 0;
-		while(i <= middle || j <= right) {
-			if(i <= middle && j <= right) {
-				tem[k++] = nums[i] < nums[j]? nums[i++] : nums[j++];
-			}else if(i <= middle) {
-				tem[k++] = nums[i++];
-			}else {
-				tem[k++] = nums[j++];
-			}
+		while(i <= middle && j <= right) {
+			tem[k++] = nums[i] < nums[j]? nums[i++] : nums[j++];
+		}
+		while(i <= middle) {
+			tem[k++] = nums[i++];
+		}
+		while(j <= right) {
+			tem[k++] = nums[j++];
 		}
 		// 将辅助数组数据写入原数组
 		int index = 0;
@@ -129,6 +103,4 @@ public class SortMerge {
 			nums[left++] = tem[index++];
 		}
 	}
-	
-
 }
