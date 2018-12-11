@@ -1,9 +1,6 @@
 public class Test {
 
-	public static void main(String[] args) {
-		Thread t = new Thread(() ->  {
-			System.out.println("线程：" + Thread.currentThread().getName());
-		});
-		t.start();
+	public static void main(String[] args) throws InterruptedException {
+		Thread.sleep(10000);
 	}
 }
