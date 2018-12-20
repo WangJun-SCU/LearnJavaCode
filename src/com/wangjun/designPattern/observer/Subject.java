@@ -1,4 +1,4 @@
-package con.wangjun.designPattern.observer;
+package com.wangjun.designPattern.observer;
 
 public interface Subject {
 	public void addFans(Observer o);  // 添加粉丝

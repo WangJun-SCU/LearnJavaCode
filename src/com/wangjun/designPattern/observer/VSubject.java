@@ -1,4 +1,4 @@
-package con.wangjun.designPattern.observer;
+package com.wangjun.designPattern.observer;
 
 import java.util.ArrayList;
 import java.util.List;
