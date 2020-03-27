@@ -21,7 +21,7 @@ public class ThreadPoolTest {
 		threadPool.submit(new MyThread()); 
 		// 第二种执行线程的方式，有返回值
 		Future<String> result = threadPool.submit(new MyThread(), "返回值1"); 
-		System.out.println(result.get());
+		System.out.println("第二种方式，返回值：" + result.get());
 		// 第三种执行线程的方式，传入Callable对象，有返回值
 		Future<String> result2 = threadPool.submit(new MyThread2()); 
 		System.out.println(result2.get());
