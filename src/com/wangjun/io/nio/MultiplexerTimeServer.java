@@ -13,11 +13,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
-/**
- * @author wangjun
- * @date 2020-03-30
- * @version 1.0
- */
 public class MultiplexerTimeServer implements Runnable {
 
 	private Selector selector;
@@ -53,17 +48,17 @@ public class MultiplexerTimeServer implements Runnable {
 	public void run() {
 		while (!stop) {
 			try {
-				//休眠时间为1秒，无论是否有读写事件，selector每隔1s被唤醒一次
-				selector.select(1000);
+				selector.select();
 				Set<SelectionKey> selectedKeys = selector.selectedKeys();
 				Iterator<SelectionKey> it = selectedKeys.iterator();
 				SelectionKey key = null;
+				System.out.println("key size=" + selectedKeys.size());
 				while (it.hasNext()) {
+					System.out.println("it has next");
 					key = it.next();
 					it.remove();
 					try {
-						handleInput(key);
-						//new Thread(new MyThread(key)).start();
+						new Thread(new MyThread(key)).start();
 					} catch (Exception e) {
 						e.printStackTrace();
 						if (key != null) {
@@ -99,12 +94,12 @@ public class MultiplexerTimeServer implements Runnable {
 				sc.register(selector, SelectionKey.OP_READ);
 			}
 			if (key.isReadable()) {
-				System.out.println("收到 read 请求，休眠" + SLEEP_TIME/1000 + "s");
-				try {
-					Thread.sleep(SLEEP_TIME);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+//				System.out.println("收到 read 请求，休眠" + SLEEP_TIME/1000 + "s");
+//				try {
+//					Thread.sleep(SLEEP_TIME);
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
 				SocketChannel sc = (SocketChannel) key.channel();
 				ByteBuffer readBuffer = ByteBuffer.allocate(1024);
 				int readBytes = sc.read(readBuffer);
@@ -121,13 +116,15 @@ public class MultiplexerTimeServer implements Runnable {
 				} else if (readBytes < 0) {
 					System.out.println("对端链路关闭");
 					// 对端链路关闭
-					key.channel();
+					key.cancel();
 					sc.close();
 				} else {
 					System.out.println("收到0字节");
 					// 读到0字节，忽略
 				}
 			}
+		}else {
+			System.out.println("key is not valid");
 		}
 	}
 
@@ -184,13 +181,15 @@ public class MultiplexerTimeServer implements Runnable {
 						} else if (readBytes < 0) {
 							System.out.println("对端链路关闭");
 							// 对端链路关闭
-							key.channel();
+							key.cancel();
 							sc.close();
 						} else {
 							System.out.println("收到0字节");
 							// 读到0字节，忽略
 						}
 					}
+				}else {
+					System.out.println("key is not valid");
 				}
 			} catch (ClosedChannelException e) {
 				e.printStackTrace();

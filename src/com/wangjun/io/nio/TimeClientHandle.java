@@ -9,11 +9,6 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
-/**
- * @author wangjun
- * @date 2020-03-30
- * @version 1.0
- */
 public class TimeClientHandle implements Runnable {
 	
 	private String host;
@@ -102,7 +97,7 @@ public class TimeClientHandle implements Runnable {
 					this.stop = true;
 				} else if (readBytes < 0) {
 					// 对端链路关闭
-					key.channel();
+					key.cancel();
 					sc.close();
 				} else {
 					// 读到0字节，忽略

@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="D:/study/github/LearnJavaCode/lib/cglib-3.2.6.jar"/>
 	<classpathentry kind="lib" path="D:/study/github/LearnJavaCode/lib/asm-6.0.jar"/>
+	<classpathentry kind="lib" path="lib/netty-all-5.0.0.Alpha1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
