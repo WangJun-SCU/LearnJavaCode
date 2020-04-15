@@ -1,6 +1,5 @@
 package com.wangjun.io.netty;
 
-import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
@@ -10,12 +9,9 @@ import io.netty.channel.ChannelHandlerContext;
  * @date 2020-04-02
  * @version 1.0
  */
-public class TimeClientHandler extends ChannelHandlerAdapter {
-	private int counter;
-	private byte[] req;
+public class EchoClientHandler extends ChannelHandlerAdapter {
 	
-	public TimeClientHandler() {
-		req = ("QUERY TIME ORDER" + System.getProperty("line.separator")).getBytes();
+	public EchoClientHandler() {
 	}
 	
 	/*
@@ -23,12 +19,9 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
 	 */
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
-		ByteBuf message = null;
-		for(int i = 0; i < 100; i++) {
-			message = Unpooled.buffer(req.length);
-			message.writeBytes(req);
-			ctx.writeAndFlush(message);
-		}
+		String msg = "12345678901234567890123";
+		ctx.writeAndFlush(Unpooled.copiedBuffer(msg.getBytes()));
+		System.out.println("客户端发送的消息：" + msg);
 	}
 	
 	/*
@@ -37,7 +30,7 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		String body = (String)msg;
-		System.out.println("Now is:" + body + ", and the counter is: " + ++counter);
+		System.out.println("收到服务器消息:" + body);
 	}
 	
 	@Override

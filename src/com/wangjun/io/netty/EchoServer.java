@@ -1,6 +1,8 @@
 package com.wangjun.io.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -8,7 +10,8 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.LineBasedFrameDecoder;
+import io.netty.handler.codec.DelimiterBasedFrameDecoder;
+import io.netty.handler.codec.FixedLengthFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 
 /**
@@ -16,7 +19,7 @@ import io.netty.handler.codec.string.StringDecoder;
  * @date 2020-04-02
  * @version 1.0
  */
-public class TimeServer {
+public class EchoServer {
 
 	public void bind(int port) throws Exception {
 		// 配置服务端的NIO线程组,一个用于接收客户端的链接，另一个用于进行SocketChannel的网络读写
@@ -41,15 +44,14 @@ public class TimeServer {
 
 		@Override
 		protected void initChannel(SocketChannel arg0) throws Exception {
-			//这里增加了两个ChannelHandler
-			arg0.pipeline().addLast(new LineBasedFrameDecoder(1024));
+			arg0.pipeline().addLast(new FixedLengthFrameDecoder(20));
 			arg0.pipeline().addLast(new StringDecoder());
-			arg0.pipeline().addLast(new TimeServerHandler());
+			arg0.pipeline().addLast(new EchoServerHandler());
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
 		int port = 8080;
-		new TimeServer().bind(port);
+		new EchoServer().bind(port);
 	}
 }

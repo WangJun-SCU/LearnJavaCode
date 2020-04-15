@@ -8,7 +8,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.LineBasedFrameDecoder;
+import io.netty.handler.codec.FixedLengthFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 
 /**
@@ -16,7 +16,7 @@ import io.netty.handler.codec.string.StringDecoder;
  * @date 2020-04-02
  * @version 1.0
  */
-public class TimeClient {
+public class EchoClient {
 	
 	public void connect(int port, String host) throws Exception {
 		//配置客户端NIO线程组
@@ -29,10 +29,9 @@ public class TimeClient {
 
 				@Override
 				protected void initChannel(SocketChannel ch) throws Exception {
-					//这里增加了两个ChannelHandler
-					ch.pipeline().addLast(new LineBasedFrameDecoder(1024));
+					ch.pipeline().addLast(new FixedLengthFrameDecoder(20));
 					ch.pipeline().addLast(new StringDecoder());
-					ch.pipeline().addLast(new TimeClientHandler());
+					ch.pipeline().addLast(new EchoClientHandler());
 				}
 			});
 			//发起异步连接操作
@@ -48,7 +47,7 @@ public class TimeClient {
 
 	public static void main(String[] args) throws Exception {
 		int port = 8080;
-		new TimeClient().connect(port, "127.0.0.1");
+		new EchoClient().connect(port, "127.0.0.1");
 	}
 
 }
