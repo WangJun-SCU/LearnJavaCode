@@ -38,7 +38,7 @@ public class CglibProxyFactory implements MethodInterceptor {
 		String duty = map.get(person);
 		if(null == duty) {
 			//执行目标对象的方法
-			System.out.println("cglib实现，有缓存");
+			System.out.println("cglib实现，没有缓存");
 			duty = (String) arg1.invoke(person, arg2);
 			map.put(person, duty);
 		}
