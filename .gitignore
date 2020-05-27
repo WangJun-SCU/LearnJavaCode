@@ -3,4 +3,6 @@ bin
 .recommenders
 .DS_Store
 .classpath
+.project
+.settings/
 
