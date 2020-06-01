@@ -44,7 +44,7 @@ public class LeetCode71 {
 	}
 	
 	/*
-	 * 精简瘦身过的
+	 * 解法2：精简瘦身过的
 	 */
 	public static boolean isSymmetric2(TreeNode root) {
 	      if(root == null) return true;
